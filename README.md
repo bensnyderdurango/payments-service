@@ -17,4 +17,5 @@ pytest                   # run tests
 |--------|-------------------|----------------------|
 | GET    | /health           | Liveness check       |
 | POST   | /payments         | Create a payment     |
+| GET    | /payments         | List payments        |
 | GET    | /payments/<id>    | Fetch a payment      |
