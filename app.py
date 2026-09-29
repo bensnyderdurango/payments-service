@@ -27,6 +27,11 @@ def create_payment():
     return jsonify(payment), 201
 
 
+@app.get("/payments")
+def list_payments():
+    return jsonify(list(PAYMENTS.values()))
+
+
 @app.get("/payments/<payment_id>")
 def get_payment(payment_id):
     payment = PAYMENTS.get(payment_id)

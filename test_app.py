@@ -22,3 +22,11 @@ def test_create_and_get_payment():
 def test_rejects_invalid_amount():
     res = client().post("/payments", json={"amount": -1})
     assert res.status_code == 400
+
+
+def test_list_payments():
+    c = client()
+    c.post("/payments", json={"amount": 10})
+    res = c.get("/payments")
+    assert res.status_code == 200
+    assert len(res.get_json()) >= 1
